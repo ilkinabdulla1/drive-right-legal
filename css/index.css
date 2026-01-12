@@ -1,0 +1,248 @@
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ================= VARIABLES ================= */
+:root {
+  --primary: #1f3a5f;
+  --accent: #f59e0b;
+  --dark: #0f172a;
+  --gray: #64748b;
+  --light: #f8fafc;
+  --border: #e5e7eb;
+  --white: #ffffff;
+}
+
+/* ================= BASE ================= */
+body {
+  font-family: Inter, system-ui, sans-serif;
+  background: var(--white);
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+img {
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.section {
+  padding: 80px 0;
+}
+
+.section.light {
+  background: var(--light);
+}
+
+/* ================= HEADER ================= */
+.header {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  top: 0;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 72px;
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 22px;
+  color: var(--primary);
+}
+
+.nav a {
+  margin-left: 24px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--dark);
+}
+
+/* hover stays primary */
+.nav a:hover {
+  color: var(--primary);
+}
+
+/* active page uses accent */
+.nav a.active {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* ================= HERO ================= */
+.hero {
+  background: linear-gradient(rgb(15, 23, 42), rgb(15, 23, 42)),
+              url("../images/hero-bg.jpg") center/cover;
+  color: var(--white);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 60px;
+  min-height: 90vh;
+  align-items: center;
+}
+
+.hero-tag {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.hero h2 {
+  font-size: 42px;
+  margin: 16px 0;
+}
+
+.hero p {
+  color: #e5e7eb;
+  max-width: 520px;
+}
+
+.hero-actions {
+  margin-top: 32px;
+  display: flex;
+  gap: 16px;
+}
+
+/* ================= BUTTONS ================= */
+.btn {
+  padding: 14px 28px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.btn.primary {
+  background: var(--accent);
+  color: var(--dark);
+}
+
+.btn.outline {
+  border: 1px solid rgba(255,255,255,.5);
+  color: var(--white);
+}
+
+/* ================= SECTION HEADER ================= */
+.section-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 48px;
+}
+
+.section-header h3 {
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+.section-header p {
+  color: var(--gray);
+}
+
+/* ================= GRIDS ================= */
+.problem-grid,
+.topics-grid,
+.content-grid {
+  display: grid;
+  gap: 24px;
+}
+
+.problem-grid {
+  grid-template-columns: repeat(4,1fr);
+}
+
+.topics-grid {
+  grid-template-columns: repeat(5,1fr);
+}
+
+.content-grid {
+  grid-template-columns: repeat(3,1fr);
+}
+
+/* ================= CARDS ================= */
+.problem-card,
+.topic-card,
+.content-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  transition: transform .2s;
+}
+
+.problem-card:hover,
+.topic-card:hover,
+.content-card:hover {
+  transform: translateY(-6px);
+}
+
+.problem-card h4,
+.content-card h4 {
+  margin: 16px 0 6px;
+}
+
+/* ================= DISCLAIMER ================= */
+.disclaimer {
+  background: var(--dark);
+  padding: 32px 0;
+}
+
+.disclaimer p {
+  color: #cbd5f5;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* ================= FOOTER ================= */
+.footer {
+  background: #020617;
+  padding: 24px 0;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+  .problem-grid,
+  .topics-grid {
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .content-grid,
+  .problem-grid,
+  .topics-grid {
+    grid-template-columns: 1fr;
+  }
+  .nav {
+    display: none;
+  }
+}
